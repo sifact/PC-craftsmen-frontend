@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   background-color: #fefce8;
-}
+} */
 
 .custom-min-height {
   min-height: calc(100vh - 48px);
