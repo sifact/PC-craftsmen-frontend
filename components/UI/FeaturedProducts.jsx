@@ -11,7 +11,7 @@ const FeaturedProducts = ({ products }) => {
         title="Featured Products"
         subtitle="Discover our top-rated products crafted with care"
       />
-      <div className="my-32 grid lg:grid-cols-3 md:grid-cols-2 gap-12 container mx-auto">
+      <div className="mb-32 grid lg:grid-cols-3 md:grid-cols-2 gap-12 container mx-auto">
         {products ? (
           products.map(
             (product, idx) =>
@@ -30,7 +30,7 @@ export default FeaturedProducts;
 const FeaturedProduct = ({ product }) => {
   const { _id, title, img, category, price, status } = product;
   return (
-    <Link href={`/productDetails/${_id}`}>
+    <Link href={`{/product/${news?.id}}`}>
       <div className="shadow-md bg-gray-100 h-auto rounded-md p-4">
         <div className="h-[300px]">
           <img
