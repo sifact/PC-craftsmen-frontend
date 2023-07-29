@@ -9,3 +9,9 @@
 .custom-min-height {
   min-height: calc(100vh - 48px);
 }
+
+.carousel .control-dots .dot {
+  background: yellow !important;
+  width: 20px !important;
+  height: 20px !important;
+}
