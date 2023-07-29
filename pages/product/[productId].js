@@ -10,8 +10,8 @@ export const getStaticPaths = async () => {
   const res = await fetch("http://localhost:5000/product");
   const products = await res.json();
 
-  const paths = products.map((news) => ({
-    params: { newsId: news.id },
+  const paths = products.map((product) => ({
+    params: { productId: product.id },
   }));
 
   return { paths, fallback: false };
@@ -19,13 +19,13 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { params } = context;
-  const res = await fetch(`http://localhost:5000/news/${params.newsId}`);
+  const res = await fetch(`http://localhost:5000/news/${params.productId}`);
   const data = await res.json();
-  // console.log(data);
+  console.log(data);
 
   return {
     props: {
-      news: data,
+      product: data,
     },
   };
 };

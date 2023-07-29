@@ -30,7 +30,7 @@ export default FeaturedProducts;
 const FeaturedProduct = ({ product }) => {
   const { _id, title, img, category, price, status } = product;
   return (
-    <Link href={`{/product/${news?.id}}`}>
+    <Link href={`/product/${product?._id}`}>
       <div className="shadow-md bg-gray-100 h-auto rounded-md p-4">
         <div className="h-[300px]">
           <img
