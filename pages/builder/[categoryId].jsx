@@ -50,12 +50,15 @@ export const CategoryProduct = ({ product }) => {
             </span>
           </div>
 
-          <div className="flex justify-between items-center mt-4">
+          <div className="flex justify-between items-center mt-4 mb-4">
             <span className="font-semibold">Tk {price}</span>
-            <button className="bg-amber-500 py-2 px-3 rounded-full">
+            <button className="border-2 border-amber-500 py-2 px-5 font-bold rounded-full">
               {status ? "In Stock" : "Out of stock"}
             </button>
           </div>
+          <button className="bg-amber-500 py-2 px-5 rounded-sm rounded-bl-[15%] font-semibold">
+            Add to builder
+          </button>
         </div>
       </div>
     </Link>
