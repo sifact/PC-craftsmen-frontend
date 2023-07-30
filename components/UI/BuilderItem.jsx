@@ -16,7 +16,7 @@ const BuilderItem = ({ category }) => {
           <span>{category.title}</span>
         </div>
         <div>
-          <Link href={`/categories/${category.title}`}>
+          <Link href={`/builder/${category.title}`}>
             <button className="px-2 py-1 bg-amber-500 rounded-bl-[15%] text-white rounded-sm ">
               Choose
             </button>
