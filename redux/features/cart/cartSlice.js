@@ -10,9 +10,21 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      state.products.push(action.payload);
+      const newProduct = action.payload;
+      const existingProductIndex = state.products.findIndex(
+        (product) => product.category === newProduct.category
+      );
 
-      state.total += action.payload.price;
+      if (existingProductIndex !== -1) {
+        // If a product with the same category already exists, replace it
+        state.total -= state.products[existingProductIndex].price;
+        state.products[existingProductIndex] = newProduct;
+      } else {
+        // Otherwise, add the new product to the state
+        state.products.push(newProduct);
+      }
+
+      state.total += newProduct.price;
     },
 
     removeOne: (state, action) => {
@@ -25,6 +37,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, removeOne } = cartSlice.actions;
+export const { addToCart, removeOne } = cartSlice.actions;
 
 export default cartSlice.reducer;

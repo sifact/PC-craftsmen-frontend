@@ -51,7 +51,9 @@ const ProductDetails = ({ product }) => {
 export default ProductDetails;
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:5000/api/product");
+  const res = await fetch(
+    "https://pc-craftsmen-backend.vercel.app/api/product"
+  );
   const products = await res.json();
 
   const paths = products.map((product) => ({
@@ -65,7 +67,7 @@ export const getStaticProps = async (context) => {
   const { params } = context;
 
   const res = await fetch(
-    `http://localhost:5000/api/product/${params.productId}`
+    `https://pc-craftsmen-backend.vercel.app/api/product/${params.productId}`
   );
 
   const data = await res.json();

@@ -14,7 +14,9 @@ export default function Home({ products, categories }) {
 }
 
 export const getStaticPropsProducts = async () => {
-  const res = await fetch("http://localhost:5000/api/product");
+  const res = await fetch(
+    "https://pc-craftsmen-backend.vercel.app/api/product"
+  );
   const data = await res.json();
 
   return {
@@ -26,7 +28,9 @@ export const getStaticPropsProducts = async () => {
 };
 
 export const getStaticPropsCategories = async () => {
-  const res = await fetch("http://localhost:5000/api/category");
+  const res = await fetch(
+    "https://pc-craftsmen-backend.vercel.app/api/category"
+  );
   const data = await res.json();
   console.log(data);
 
@@ -39,10 +43,8 @@ export const getStaticPropsCategories = async () => {
 };
 
 export async function getStaticProps() {
- 
   const productsData = await getStaticPropsProducts();
 
- 
   const categoriesData = await getStaticPropsCategories();
 
   return {

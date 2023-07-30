@@ -65,7 +65,6 @@ const Navbar = () => {
         <div className={`ml-20 md:flex gap-5 hidden`}>
           <Link href="/profile">Profile</Link>
           <Link href="/login">Login</Link>
-          <Link href="/signup">Sign Up</Link>
         </div>
       </div>
     </div>
