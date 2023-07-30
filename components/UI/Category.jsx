@@ -9,7 +9,7 @@ const Category = () => {
     { name: "gpu", path: "/gpu" },
     { name: "monitor", path: "monitor" },
     { name: "motherboard", path: "/motherboard" },
-    { name: "powerSupplyUnit", path: "/powerSupplyUnit" },
+    { name: "mouse", path: "/mouse" },
     { name: "ram", path: "/ram" },
     { name: "storageDevice", path: "/storageDevice" },
   ];
