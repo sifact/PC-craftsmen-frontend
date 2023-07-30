@@ -29,7 +29,7 @@ const FeatureCategory = ({ category }) => {
   const { title, img } = category;
 
   return (
-    <Link href={`/${title}`}>
+    <Link href={`/categories/${title}`}>
       <div className="relative bg-gradient-to-tr from-gray-900 to-green-50">
         <img className="rounded-sm  mix-blend-overlay" src={img} alt="" />
         {/* <h1>{name}</h1> */}

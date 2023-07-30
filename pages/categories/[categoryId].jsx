@@ -4,17 +4,11 @@ import { useRouter } from "next/router";
 import Header from "@/components/UI/Header";
 import Link from "next/link";
 
-const CategoryProducts = ({ products }) => {
-  console.log(products);
-  const router = useRouter();
-  const { pathname } = router;
-  const category = pathname.slice(1);
-  const CPU = category.toUpperCase();
-
+const CategoryProducts = ({ products, category }) => {
   return (
-    <div>
+    <div className="my-20">
       <Header
-        title={`${CPU}'s`}
+        title={`${category}'s`}
         subtitle="Discover our top-rated products crafted with care"
       />
       <div className="mb-32 grid lg:grid-cols-3 md:grid-cols-2 gap-12 container mx-auto">
@@ -37,7 +31,6 @@ CategoryProducts.getLayout = function getLayout(page) {
 };
 
 export const CategoryProduct = ({ product }) => {
-  console.log(product);
   const { _id, title, img, category, price, status } = product;
   return (
     <Link href={`/product/${product?._id}`}>
@@ -82,8 +75,8 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { params } = context;
-  console.log(params);
-
+  const { categoryId } = params;
+  console.log(categoryId);
   const res = await fetch(
     `http://localhost:5000/api/product/cat/${params.categoryId}`
   );
@@ -93,6 +86,7 @@ export const getStaticProps = async (context) => {
   return {
     props: {
       products: data,
+      category: categoryId,
     },
   };
 };

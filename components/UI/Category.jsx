@@ -11,7 +11,7 @@ const Category = () => {
     { name: "motherboard", path: "/motherboard" },
     { name: "mouse", path: "/mouse" },
     { name: "ram", path: "/ram" },
-    { name: "storageDevice", path: "/storageDevice" },
+    { name: "storageDevice", path: "/ssd" },
   ];
   return (
     <div className="flex  items-center ">
